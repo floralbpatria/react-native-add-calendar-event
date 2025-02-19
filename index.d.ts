@@ -28,6 +28,11 @@ declare module "react-native-add-calendar-event" {
      */
     notes?: string;
     navigationBarIOS?: NavigationBarIOS;
+
+     /**
+     * Number of miliseconds to reminde the user. It need a negative value in order to remind user before event.
+     */
+    alarmOffset?: number; 
   }
 
   /**

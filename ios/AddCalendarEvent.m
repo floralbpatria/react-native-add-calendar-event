@@ -174,6 +174,11 @@ RCT_EXPORT_METHOD(presentEventEditingDialog:(NSDictionary *)options resolver:(RC
     if (options[_allDay]) {
         event.allDay = [RCTConvert BOOL:options[_allDay]];
     }
+    if (options[@"alarmOffset"]) {
+        NSTimeInterval offset = [RCTConvert NSTimeInterval:options[@"alarmOffset"]];
+        EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:offset];
+        event.alarms = @[alarm];
+    }
     return event;
 }
 
